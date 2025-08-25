@@ -1,4 +1,3 @@
-import styles from "./card.module.css";
 import Image from "next/image";
 
 export default function ProductCard({
@@ -9,17 +8,16 @@ export default function ProductCard({
   imgSrc: string;
 }) {
   return (
-    <div className={styles.card}>
-      <div className={styles.cardimg}>
-        <Image src={imgSrc} alt="cover" fill={true} objectFit="cover" />
+    <div className="w-1/5 h-[300px] rounded-lg shadow-lg">
+      <div className="w-full h-[70%] relative rounded-t-lg">
+        <Image
+          src={imgSrc}
+          alt="Card"
+          fill={true}
+          className="object-cover rounded-t-lg"
+        />
       </div>
-      <div className={styles.cardtext}>
-        {venueName}
-        <div>
-          A stunning bouquet hall where love blossoms and unforgettable memories
-          are made
-        </div>
-      </div>
+      <div className="w-full h-[30%] p-[10px] text-black">{venueName}</div>
     </div>
   );
 }
